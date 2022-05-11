@@ -8,10 +8,10 @@ Markup :
 * It will be using Get method  
 * It will receive a parameter (a string)  
 * If the string is a palindrome it will return a json containing  
-* a string (the parameter string)  
-* a boolean (true)  
-* a sorted object (listing different characters and how many time those characters are in the string)  
-* an int (the length of the string)  
+    * a string (the parameter string)  
+    * a boolean (true)  
+    * a sorted object (listing different characters and how many time those characters are in the string)  
+    * an int (the length of the string)  
 ```
 {
     "name": "anilina",
@@ -27,8 +27,8 @@ Markup :
 ```
 Markup :
 * If the string is not a palindrome it will return a json containing  
-* a string (the parameter string)  
-* a boolean (false)  
+    * a string (the parameter string)  
+    * a boolean (false)  
 ```
 {
     ""name"": ""example"",
