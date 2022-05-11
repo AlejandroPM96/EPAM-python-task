@@ -1,17 +1,17 @@
 # EPAM-python-task
 
 ## Task requirements:
-Task
 
 In Python create an API that have next requirements:
 
-It will be using Get method
-It will receive a parameter (a string)
-If the string is a palindrome it will return a json containing
-a string (the parameter string)
-a boolean (true)
-a sorted object (listing different characters and how many time those characters are in the string)
-an int (the length of the string)
+: It will be using Get method\n
+: It will receive a parameter (a string)\n
+: If the string is a palindrome it will return a json containing\n
+: a string (the parameter string)\n
+: a boolean (true)\n
+: a sorted object (listing different characters and how many time those characters are in the string)\n
+: an int (the length of the string)\n
+```
 {
     "name": "anilina",
     "palindrome": true,
@@ -23,10 +23,13 @@ an int (the length of the string)
     },
     "length": 7
 }
-If the string is not a palindrome it will return a json containing
-a string (the parameter string)
-a boolean (false)
+```
+: If the string is not a palindrome it will return a json containing\n
+: a string (the parameter string)\n
+: a boolean (false)\n
+```
 {
     ""name"": ""example"",
     ""palindrome"": false
 }
+```
