@@ -1,5 +1,16 @@
 # EPAM-python-task
 
+## Running the project:
+To run this project follow the next steps:
+### Install Requirements
+```
+pip install -r requirements
+```
+### Run project
+```
+export FLASK_APP=application
+flask run
+```
 ## Task requirements:
 
 In Python create an API that have next requirements:
