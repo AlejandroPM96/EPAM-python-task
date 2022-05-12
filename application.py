@@ -17,6 +17,7 @@ def isPalindrome(word:str):
     Return:
         bool: True if the word is palindrome or False if not
     """
+    word = word.strip.replace(" ", "")
     reversed_word = word[::-1]
     return True if reversed_word == word else False
 
