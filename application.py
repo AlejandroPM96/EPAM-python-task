@@ -1,6 +1,8 @@
 from flask import Flask
 from flask import request
 
+import unidecode
+
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 
@@ -17,7 +19,6 @@ def isPalindrome(word:str):
     Return:
         bool: True if the word is palindrome or False if not
     """
-    word = word.strip.replace(" ", "")
     reversed_word = word[::-1]
     return True if reversed_word == word else False
 
@@ -66,6 +67,7 @@ def getPalindrome():
     }
     """
     word = request.args.get('word')
+    word = unidecode.unidecode(word.replace(" ", "").lower())
     is_palindrome = isPalindrome(word)
     if is_palindrome:
         return {"name":word, "palindrome": is_palindrome, "sorted":  makeSortedArray(word), "length": len(word)}, 200
