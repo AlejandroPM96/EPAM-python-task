@@ -5,10 +5,12 @@ from flask import request
 import os
 import unidecode
 
+
 app = Flask(__name__)
+    
 app.config['JSON_SORT_KEYS'] = False
 port = os.environ['HOME'] if os.environ.get('HOME',"") != "" else "8080"
-app.run(host='0.0.0.0', port=port)
+app.run(host='0.0.0.0', port=port, debug=True)
 
 def isPalindrome(word:str):
     """Check if the word sent is a palindrome
@@ -77,3 +79,6 @@ def getPalindrome():
         return {"name":word, "palindrome": is_palindrome, "sorted":  makeSortedArray(word), "length": len(word)}, 200
     else:
         return {"name":word, "palindrome": is_palindrome}
+    
+
+
