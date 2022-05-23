@@ -16,7 +16,7 @@ pipeline {
                 echo 'BUilding and pushing'
                 script{
                     app = docker.build "us-central1-docker.pkg.dev/terraform-course-349916/testingrepo/python-api:${env.BUILD_ID}"
-                    app.push
+                    app.push "${env.BUILD_ID}"
                 }
             }
         }
