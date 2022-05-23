@@ -12,9 +12,9 @@ pipeline {
         stage('Run gcloud') {
             steps {
                 echo 'Pushing repo....'
-                withEnv(['GCLOUD_PATH=/usr/lib64/google-cloud-sdk/bin', 'GCP_USER=${GCP_USER}']) {
-                    sh '$GCLOUD_PATH/gcloud auth activate-service-account jenkins@terraform-course-349916.iam.gserviceaccount.com --key-file=$GCP_USER --project=terraform-course-349916'
-                    sh '$GCLOUD_PATH/gcloud auth configure-docker us-central1-docker.pkg.dev'
+                withCredentials([file(credentialsId: 'key-sa', variable: 'GCP_USER')]) {
+                    sh("gcloud auth activate-service-account --key-file=${GCP_USER}")
+                    sh("gcloud auth configure-docker us-central1-docker.pkg.dev")
                 }
             }
         }
