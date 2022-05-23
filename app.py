@@ -7,10 +7,6 @@ import unidecode
 
 
 app = Flask(__name__)
-    
-app.config['JSON_SORT_KEYS'] = False
-port = os.environ['HOME'] if os.environ.get('HOME',"") != "" else "8080"
-app.run(host='0.0.0.0', port=port, debug=True)
 
 def isPalindrome(word:str):
     """Check if the word sent is a palindrome
@@ -80,5 +76,8 @@ def getPalindrome():
     else:
         return {"name":word, "palindrome": is_palindrome}
     
-
+if __name__ == '__main__':
+    app.config['JSON_SORT_KEYS'] = False
+    port = os.environ['HOME'] if os.environ.get('HOME',"") != "" else "8080"
+    app.run(host='0.0.0.0', port=port, debug=True)
 
