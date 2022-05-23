@@ -12,8 +12,8 @@ pipeline {
         stage('Run gcloud') {
             steps {
                 echo 'Pushing repo....'
-                withCredentials([file(credentialsId: 'key-sa', variable: 'GCP_USER')]) {
-                    sh("gcloud auth activate-service-account --key-file=${GCP_USER}")
+                withCredentials([file(credentialsId: 'GCP_USER', variable: 'GC_KEY')]) {
+                    sh("gcloud auth activate-service-account --key-file=${GC_KEY}")
                     sh("gcloud auth configure-docker us-central1-docker.pkg.dev")
                 }
             }
