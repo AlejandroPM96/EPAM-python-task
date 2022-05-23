@@ -78,6 +78,9 @@ def getPalindrome():
     
 if __name__ == '__main__':
     app.config['JSON_SORT_KEYS'] = False
-    port = os.environ['HOME'] if os.environ.get('HOME',"") != "" else "8080"
-    app.run(host='0.0.0.0', port=port, debug=True)
+    port = os.environ['HOME'] if os.environ.get('HOME',"") != "" else 8080
+    if port.isdigit():
+        app.run(host='0.0.0.0', port=port, debug=True)
+    else:
+        app.run(host='0.0.0.0', port=8080, debug=True)
 
