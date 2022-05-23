@@ -20,7 +20,9 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                app.push
+                script{
+                    app.push
+                }
             }
         }
     }
