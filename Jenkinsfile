@@ -15,13 +15,13 @@ pipeline {
                 withEnv(['GCLOUD_PATH=/usr/lib64/google-cloud-sdk/bin']) {
                     sh '$GCLOUD_PATH/gcloud auth activate-service-account jenkins@terraform-course-349916.iam.gserviceaccount.com --key-file=${GCP_USER} --project=terraform-course-349916'
                     sh '$GCLOUD_PATH/gcloud auth configure-docker us-central1-docker.pkg.dev'
-                    app.push
                 }
             }
         }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                app.push
             }
         }
     }
