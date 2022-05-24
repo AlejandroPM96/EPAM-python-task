@@ -48,7 +48,7 @@ def getHealth():
     """
     The endpoint for checking health of app
     """
-    return "ok"
+    return "ok, Hello world"
 
 @app.route("/palindrome")
 def getPalindrome():
