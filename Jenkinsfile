@@ -27,7 +27,7 @@ pipeline {
                 echo 'BUilding and pushing'
                 withCredentials([file(credentialsId: 'GCP_USER', variable: 'GC_KEY')]) {
                     sh("gcloud auth activate-service-account --key-file=${GC_KEY}")
-                    sh("gcloud run deploy python-assignment --image us-central1-docker.pkg.dev/terraform-course-349916/testingrepo/python-api:${env.BUILD_ID} --region us-central1 --allow-unauthenticated")
+                    sh("gcloud run deploy python-assignment --image us-central1-docker.pkg.dev/terraform-course-349916/testingrepo/python-api:${env.BUILD_ID} --region us-central1 --allow-unauthenticated --min-instances 1")
                 }
             }
         }
